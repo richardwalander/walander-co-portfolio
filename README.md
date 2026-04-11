@@ -35,39 +35,26 @@ npm run build
 
 ## 🔥 Firebase Hosting Setup
 
-### 1. Install Firebase CLI locally
+Firebase project already exists: **walanderco**
+
+### 1. Install dependencies
 ```bash
 npm install
 ```
 
-### 2. Login to Firebase
-```bash
-npx firebase login
-```
-
-### 3. Initialize Firebase (if not already done)
-```bash
-npx firebase init hosting
-```
-
-Select:
-- Use existing project: **walander-co** (or create new)
-- Public directory: **dist**
-- Configure as single-page app: **Yes**
-
-### 4. Deploy manually
+### 2. Deploy manually
 ```bash
 npm run build
-npx firebase deploy
+npx firebase deploy --only hosting:walanderco
 ```
 
-### 5. Setup GitHub Actions (Automated Deployment)
+### 3. Setup GitHub Actions (Automated Deployment)
 
 #### Required Secrets
 Go to **GitHub Repository Settings → Secrets and variables → Actions**, add:
 
-1. **`FIREBASE_SERVICE_ACCOUNT_WALANDER_CO`**
-   - Go to [Firebase Console](https://console.firebase.google.com/)
+1. **`FIREBASE_SERVICE_ACCOUNT`**
+   - Go to [Firebase Console](https://console.firebase.google.com/project/walanderco/settings/serviceaccounts)
    - Project Settings → Service Accounts
    - Generate new private key
    - Copy the entire JSON content

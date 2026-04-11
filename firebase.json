@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "walanderco",
     "public": "dist",
     "ignore": [
       "firebase.json",
