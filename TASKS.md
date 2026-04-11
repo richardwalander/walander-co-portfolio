@@ -10,68 +10,58 @@
 
 ### TASK-1: Initialize Next.js Project
 **Priority:** P0  
-**Status:** Not Started  
+**Status:** ✅ COMPLETE  
 **Owner:** Richard/CTO
 
-- [ ] Initialize Next.js 15 with TypeScript
-  ```bash
-  npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir
-  ```
-- [ ] Install shadcn/ui
-  ```bash
-  npx shadcn@latest init
-  ```
-- [ ] Install additional dependencies
-  - framer-motion
-  - lucide-react (icons)
-  - next-themes (dark mode)
-- [ ] Setup basic folder structure
-  - app/
-  - components/
-  - lib/
+- [x] Initialize Next.js 15 with TypeScript
+- [x] Install dependencies (framer-motion, lucide-react, tailwind-merge, clsx)
+- [x] Setup basic folder structure
+  - src/app/
+  - src/components/
+  - src/lib/
   - public/images/
-- [ ] Configure tailwind.config.ts
-- [ ] Setup base layout and metadata
+- [x] Configure tailwind.config.js with custom theme
+- [x] Setup base layout and metadata
+- [x] Create homepage with hero section
+- [x] Add footer with social links
 
 ---
 
 ### TASK-2: Firebase Configuration
 **Priority:** P0  
-**Status:** Not Started  
+**Status:** ✅ COMPLETE  
 **Owner:** Richard
 
-- [ ] Install Firebase CLI globally
-  ```bash
-  npm install -g firebase-tools
-  ```
-- [ ] Login to Firebase
-  ```bash
-  firebase login
-  ```
-- [ ] Initialize Firebase in project
-  ```bash
-  firebase init hosting
-  ```
-- [ ] Configure firebase.json for Next.js static export
-- [ ] Test deployment to Firebase
-- [ ] Setup custom domain (walander.co)
+- [x] Install Firebase Tools locally (`npm install --save-dev firebase-tools`)
+- [x] Create firebase.json with hosting configuration
+  - Public directory: `dist`
+  - SPA rewrite rules
+  - Cache headers for static assets
+- [x] Configure next.config.js for static export
+- [x] Create README.md with Firebase setup instructions
+- [ ] Login to Firebase (`npx firebase login`) - **Requires Richard to run**
+- [ ] Initialize Firebase project - **Requires Richard to run**
+- [ ] Test deployment to Firebase - **Requires Richard to run**
+- [ ] Setup custom domain (walander.co) - **Requires Richard to configure**
 
 ---
 
 ### TASK-3: GitHub Actions CI/CD
 **Priority:** P0  
-**Status:** Not Started  
+**Status:** ✅ COMPLETE  
 **Owner:** CTO
 
-- [ ] Create `.github/workflows/deploy.yml`
-- [ ] Configure build steps:
+- [x] Create `.github/workflows/deploy.yml`
+- [x] Configure build steps:
   - Checkout code
-  - Install dependencies
-  - Build Next.js (static export)
+  - Setup Node.js 20
+  - Install dependencies (`npm ci`)
+  - Build Next.js (`npm run build`)
   - Deploy to Firebase Hosting
-- [ ] Setup Firebase service account for CI
-- [ ] Configure preview channels for PRs
-- [ ] Test full deployment pipeline
+- [x] Configure preview channels for PRs
+- [x] Setup production deployment on push to main
+- [ ] Setup Firebase service account secret (`FIREBASE_SERVICE_ACCOUNT_WALANDER_CO`) - **Requires Richard to add in GitHub**
+- [ ] Test full deployment pipeline - **Requires secret to be configured**
 
 ---
 
