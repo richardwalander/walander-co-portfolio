@@ -74,9 +74,9 @@ const projects = [
     description:
       "Developed design system and Tinder-style matching MVP for freelancers. Secured 4.2M EUR funding.",
     tags: ["Design System", "MVP", "Product Design", "Startup"],
-    image: "https://cdn.dribbble.com/userupload/9697066/file/original-e54e4ff0f552a675533df9962b8ce820.png?format=webp&resize=800x600&vertical=center",
+    image: "https://cdn.dribbble.com/userupload/4153252/file/original-5b3b8c4a28e19dd2b6e7ce5756b4270f.png?format=webp&resize=800x600&vertical=center",
     links: {
-      behance: "https://www.behance.net/gallery/...",
+      dribbble: "https://dribbble.com/shots/20143473-Web-page-design-exploration-for-freelance-payments-service",
     },
     featured: false,
   },
