@@ -18,6 +18,7 @@ const projects = [
     description:
       "A Flutter/Android app that estimates running and cycling power from heart rate and motion sensors. Targets athletes who want power-based training without expensive hardware.",
     tags: ["Flutter", "Android", "iOS", "Product Design", "Mobile Development"],
+    image: "https://cdn.dribbble.com/userupload/5417079/file/original-255c4c23a3c15c3db7a01b0b0777052a.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
       github: "https://github.com/richardwalander/kraft",
@@ -31,6 +32,7 @@ const projects = [
     description:
       "macOS application for extended desktop streaming. Transform any device into an additional display using WebSocket technology.",
     tags: ["macOS", "Swift", "Product Design", "System Architecture"],
+    image: "https://cdn.dribbble.com/userupload/5494263/file/original-94f537a14b0e9a8dbe71e219b9281bb2.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
       github: "https://github.com/richardwalander/beam",
@@ -44,6 +46,7 @@ const projects = [
     description:
       "Led design for a marketplace with 6M users and 2M bookings/month. Created cross-platform design system in Figma.",
     tags: ["Design System", "Figma", "Marketplace", "Mobile App", "Web App"],
+    image: "https://cdn.dribbble.com/userupload/10244614/file/still-90431b2c54196c1573bdb66189d9e8ee.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
       live: "https://www.bokadirekt.se",
@@ -57,6 +60,7 @@ const projects = [
     description:
       "Led complete rewrite of iOS and Android apps. Introduced design system and event-based analytics with Firebase.",
     tags: ["Product Management", "Mobile App", "Design System", "Analytics"],
+    image: "https://cdn.dribbble.com/userupload/10754426/file/still-728be8cc1619c4082272cbce0cfcbb7d.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
       live: "https://www.firstvet.com",
@@ -70,6 +74,7 @@ const projects = [
     description:
       "Developed design system and Tinder-style matching MVP for freelancers. Secured 4.2M EUR funding.",
     tags: ["Design System", "MVP", "Product Design", "Startup"],
+    image: "https://cdn.dribbble.com/userupload/9697066/file/original-e54e4ff0f552a675533df9962b8ce820.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
     },
@@ -82,6 +87,7 @@ const projects = [
     description:
       "Established design system for connected car platform. Secured partnerships with major European telecom operators.",
     tags: ["SaaS", "Design System", "B2B", "Automotive"],
+    image: "https://cdn.dribbble.com/userupload/10906471/file/still-2b87d9f4b6b455b053ed22c04cf575cc.png?format=webp&resize=800x600&vertical=center",
     links: {
       behance: "https://www.behance.net/gallery/...",
     },
@@ -173,10 +179,18 @@ export default function ProjectsPage() {
                 className="border-border-subtle overflow-hidden group"
               >
                 <div className="aspect-video bg-background-tertiary relative overflow-hidden">
-                  {/* Placeholder for project image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-foreground-muted">{project.title} Preview</p>
-                  </div>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-foreground-muted">{project.title} Preview</p>
+                    </div>
+                  )}
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
@@ -250,10 +264,18 @@ export default function ProjectsPage() {
                 className="border-border-subtle overflow-hidden group"
               >
                 <div className="aspect-[4/3] bg-background-tertiary relative overflow-hidden">
-                  {/* Placeholder for project image */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-foreground-muted text-sm">{project.title}</p>
-                  </div>
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <p className="text-foreground-muted text-sm">{project.title}</p>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
                 <CardHeader className="pb-3">
