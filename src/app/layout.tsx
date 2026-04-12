@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Multidisciplinary product designer crafting digital experiences. View my portfolio of design and development work.",
   metadataBase: new URL("https://walanderco.web.app"),
   keywords: ["product design", "UX design", "UI design", "Flutter", "portfolio"],
+  keywords: ["product design", "UX design", "UI design", "Flutter", "portfolio"],
   authors: [{ name: "Richard Walander" }],
   openGraph: {
     title: "Richard Walander | Product Designer",
