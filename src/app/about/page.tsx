@@ -81,6 +81,53 @@ const experience = [
       "Designed and developed React Native front-end architecture",
     ],
   },
+  {
+    company: "Rebtel",
+    role: "Product Owner/Lead UX Designer",
+    period: "2012 - 2015",
+    location: "Stockholm, Sweden",
+    description: "Led product and UX design for international calling service, achieving significant growth and market presence.",
+    achievements: [
+      "Achieved #1 rank on Google for international calling keywords, resulting in over 1M unique visitors per month",
+      "Enhanced signup and onboarding process, increasing conversion rate from signup to first payment by 400%",
+      "Rebranded and implemented responsive design system, improving multi-channel user experience",
+      "Boosted CLTV and annual revenue by 40% through subscription model, achieving $100 million in yearly revenue",
+    ],
+  },
+  {
+    company: "Telepo",
+    role: "UX Lead Designer",
+    period: "2012",
+    location: "Stockholm, Sweden",
+    description: "Led UX design for office suite aimed at SMEs, enhancing application development and user experience.",
+    achievements: [
+      "Scaled product and company, securing partnerships with top-tier telecom providers like Telia, Telenor, and Hutchison (3)",
+      "Developed feature-rich office suite with messaging, online presence management, mobility solutions, call recording",
+      "Directed design for Android, iOS, Mac, PC, and web apps",
+      "Established customizable framework for aligning applications with around 20 distinct brand identities",
+    ],
+  },
+  {
+    company: "Ericsson",
+    role: "UX Manager, UX/UI Designer, UX Tester",
+    period: "2006 - 2010",
+    location: "Stockholm, Sweden",
+    description: "Multiple UX roles within Ericsson's global organization, leading design initiatives and establishing standards.",
+    achievements: [
+      "UX Manager: Led global UX community, establishing internal UX design standards and best practices",
+      "UX/UI Designer: Designed interfaces for telecom software, achieving 25% reduction in usability issues",
+      "UX Tester: Conducted comprehensive usability testing, providing actionable insights for product improvement",
+    ],
+  },
+];
+
+const education = [
+  {
+    school: "Linköping University",
+    degree: "Master of Science",
+    period: "2001 - 2006",
+    location: "Linköping, Sweden",
+  },
 ];
 
 export default function AboutPage() {
@@ -217,6 +264,35 @@ export default function AboutPage() {
                 </Card>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section className="section border-t border-border-subtle">
+        <div className="container-custom">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="label mb-4">Education</p>
+              <h2 className="text-h2-mobile md:text-h2 font-semibold">
+                Academic Background
+              </h2>
+            </div>
+            
+            <Card className="border-border-subtle">
+              <CardHeader>
+                <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                  <div>
+                    <CardTitle className="text-xl md:text-2xl">{education[0].school}</CardTitle>
+                    <p className="text-foreground-secondary mt-1">{education[0].degree}</p>
+                  </div>
+                  <div className="text-right">
+                    <Badge variant="outline">{education[0].period}</Badge>
+                    <p className="text-sm text-foreground-tertiary mt-1">{education[0].location}</p>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
           </div>
         </div>
       </section>
