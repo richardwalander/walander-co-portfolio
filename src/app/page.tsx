@@ -1,5 +1,7 @@
 import { ArrowRight, ArrowDownRight } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
   return (
@@ -9,9 +11,9 @@ export default function Home() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto text-center">
             {/* Label */}
-            <p className="label mb-6 animate-fade-in-up">
+            <Badge variant="secondary" className="mb-6 animate-fade-in-up">
               Available for new projects
-            </p>
+            </Badge>
 
             {/* Heading */}
             <h1 className="text-hero-mobile md:text-hero font-bold tracking-tight mb-8 animate-fade-in-up delay-100">
@@ -29,18 +31,16 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-              <Button
-                href="/projects"
-                variant="primary"
-                icon={ArrowRight}
-              >
-                View Projects
+              <Button size="lg" asChild>
+                <a href="/projects">
+                  View Projects
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
-              <Button
-                href="/contact"
-                variant="secondary"
-              >
-                Get in Touch
+              <Button variant="outline" size="lg" asChild>
+                <a href="/contact">
+                  Get in Touch
+                </a>
               </Button>
             </div>
           </div>
@@ -63,52 +63,50 @@ export default function Home() {
                 Featured Projects
               </h2>
             </div>
-            <Button
-              href="/projects"
-              variant="ghost"
-              icon={ArrowRight}
-              className="hidden md:flex"
-            >
-              View All
+            <Button variant="ghost" className="hidden md:flex" asChild>
+              <a href="/projects">
+                View All
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
 
           {/* Projects Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project 1: Kraft */}
-            <article className="card-gallery group">
+            <Card className="overflow-hidden group">
               <div className="aspect-[4/3] bg-background-tertiary overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20" />
+                <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 transition-transform duration-500 group-hover:scale-105" />
               </div>
-              <div className="p-6">
-                <p className="label mb-2">Mobile App</p>
-                <h3 className="text-h3 font-semibold mb-2 group-hover:text-accent transition-colors">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Mobile App</Badge>
+                <CardTitle className="group-hover:text-accent transition-colors">
                   Kraft
-                </h3>
-                <p className="text-body-sm text-foreground-secondary">
+                </CardTitle>
+                <CardDescription>
                   Power estimation app for runners and cyclists. Built with Flutter.
-                </p>
-              </div>
-            </article>
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
             {/* Project 2: Beam */}
-            <article className="card-gallery group">
+            <Card className="overflow-hidden group">
               <div className="aspect-[4/3] bg-background-tertiary overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20" />
+                <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 transition-transform duration-500 group-hover:scale-105" />
               </div>
-              <div className="p-6">
-                <p className="label mb-2">macOS App</p>
-                <h3 className="text-h3 font-semibold mb-2 group-hover:text-accent transition-colors">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">macOS App</Badge>
+                <CardTitle className="group-hover:text-accent transition-colors">
                   Beam
-                </h3>
-                <p className="text-body-sm text-foreground-secondary">
+                </CardTitle>
+                <CardDescription>
                   Extended desktop streaming for Mac. Virtual display technology.
-                </p>
-              </div>
-            </article>
+                </CardDescription>
+              </CardHeader>
+            </Card>
 
             {/* Project 3: More */}
-            <article className="card-gallery group">
+            <Card className="overflow-hidden group">
               <div className="aspect-[4/3] bg-background-tertiary flex items-center justify-center">
                 <div className="text-center">
                   <p className="text-foreground-secondary text-body">More Projects</p>
@@ -117,22 +115,25 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="p-6">
-                <p className="label mb-2">Portfolio</p>
-                <h3 className="text-h3 font-semibold mb-2 group-hover:text-accent transition-colors">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit mb-2">Portfolio</Badge>
+                <CardTitle className="group-hover:text-accent transition-colors">
                   See All Work
-                </h3>
-                <p className="text-body-sm text-foreground-secondary">
+                </CardTitle>
+                <CardDescription>
                   Explore more projects on Dribbble and Behance.
-                </p>
-              </div>
-            </article>
+                </CardDescription>
+              </CardHeader>
+            </Card>
           </div>
 
           {/* Mobile View All Button */}
           <div className="mt-12 text-center md:hidden">
-            <Button href="/projects" variant="secondary" icon={ArrowRight}>
-              View All Projects
+            <Button variant="outline" asChild>
+              <a href="/projects">
+                View All Projects
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
@@ -152,8 +153,11 @@ export default function Home() {
                 development. I believe great products come from the intersection of 
                 user needs, business goals, and technical possibilities.
               </p>
-              <Button href="/about" variant="secondary" icon={ArrowRight}>
-                Learn More
+              <Button variant="outline" asChild>
+                <a href="/about">
+                  Learn More
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
               </Button>
             </div>
             <div className="aspect-square md:aspect-[4/3] bg-background-tertiary rounded-2xl" />
@@ -172,8 +176,11 @@ export default function Home() {
               Have a project in mind? I&apos;d love to hear about it. Let&apos;s discuss 
               how we can bring your ideas to life.
             </p>
-            <Button href="/contact" variant="primary" size="lg" icon={ArrowRight}>
-              Start a Conversation
+            <Button size="lg" asChild>
+              <a href="/contact">
+                Start a Conversation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </Button>
           </div>
         </div>
