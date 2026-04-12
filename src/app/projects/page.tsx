@@ -92,31 +92,39 @@ const projects = [
 const dribbbleShots = [
   {
     id: 1,
-    title: "Mobile Banking App",
-    image: "https://cdn.dribbble.com/...",
-    likes: 234,
-    views: 4567,
+    title: "Pull to Refresh & Skeleton Views - Bokadirekt App",
+    image: "https://cdn.dribbble.com/userupload/10906471/file/still-2b87d9f4b6b455b053ed22c04cf575cc.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/22874763-Pull-to-Refresh-Skeleton-Views-Bokadirekt-App",
   },
   {
     id: 2,
-    title: "Dashboard Design",
-    image: "https://cdn.dribbble.com/...",
-    likes: 189,
-    views: 3234,
+    title: "TabBar Animation - Bokadirekt 📱👆🔥",
+    image: "https://cdn.dribbble.com/userupload/10754426/file/still-728be8cc1619c4082272cbce0cfcbb7d.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/22818035-TabBar-Animation-Bokadirekt",
   },
   {
     id: 3,
-    title: "Onboarding Flow",
-    image: "https://cdn.dribbble.com/...",
-    likes: 312,
-    views: 5678,
+    title: "E-mail One Time Password Animation - Bokadirekt App",
+    image: "https://cdn.dribbble.com/userupload/10244614/file/still-90431b2c54196c1573bdb66189d9e8ee.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/22627055-E-mail-One-Time-Password-Animation-Bokadirekt-App",
   },
   {
     id: 4,
-    title: "E-commerce UI",
-    image: "https://cdn.dribbble.com/...",
-    likes: 156,
-    views: 2890,
+    title: "BokIcons ✴️ - Beauty and health services icon set",
+    image: "https://cdn.dribbble.com/userupload/9697066/file/original-e54e4ff0f552a675533df9962b8ce820.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/22423063-BokIcons-Beauty-and-health-services-icon-set",
+  },
+  {
+    id: 5,
+    title: "Swoozh - UI Kit for fashion retail app",
+    image: "https://cdn.dribbble.com/userupload/5494263/file/original-94f537a14b0e9a8dbe71e219b9281bb2.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/20968740-Swoozh-UI-Kit-for-fashion-retail-app",
+  },
+  {
+    id: 6,
+    title: "Peak - UI Kit for a social training and workouts app",
+    image: "https://cdn.dribbble.com/userupload/5417079/file/original-255c4c23a3c15c3db7a01b0b0777052a.png?format=webp&resize=800x600&vertical=center",
+    url: "https://dribbble.com/shots/20940183-Peak-UI-Kit-for-a-social-training-and-workouts-app",
   },
 ];
 
@@ -299,22 +307,29 @@ export default function ProjectsPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {dribbbleShots.map((shot) => (
               <a
                 key={shot.id}
-                href="https://dribbble.com/richardwalander"
+                href={shot.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group"
               >
-                <div className="aspect-square bg-background-tertiary rounded-xl overflow-hidden relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="text-foreground-muted text-sm text-center px-4">
+                <div className="aspect-[4/3] bg-background-tertiary rounded-xl overflow-hidden relative">
+                  <img
+                    src={shot.image}
+                    alt={shot.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <p className="text-white text-sm font-medium line-clamp-2">
                       {shot.title}
                     </p>
                   </div>
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </a>
             ))}
