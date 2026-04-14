@@ -46,6 +46,27 @@
   }
 }
 
+@layer components {
+  /* Section base styling */
+  .section {
+    @apply py-20 md:py-32 px-4 md:px-8;
+  }
+  
+  .section-hero {
+    @apply py-20 md:py-32 px-4 md:px-8 min-h-screen flex flex-col items-center justify-center relative;
+  }
+  
+  /* Custom container */
+  .container-custom {
+    @apply mx-auto px-4 md:px-8 max-w-6xl;
+  }
+  
+  /* Label styling */
+  .label {
+    @apply text-caption uppercase tracking-wider text-foreground-tertiary;
+  }
+}
+
 @layer utilities {
   /* Animation delays */
   .delay-100 { animation-delay: 100ms; }
