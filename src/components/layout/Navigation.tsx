@@ -36,9 +36,9 @@ export function Navigation() {
           {/* Logo */}
           <Link
             href="/"
-            className="text-lg font-semibold tracking-tight text-foreground hover:text-accent transition-colors"
+            className="text-lg font-semibold tracking-tight text-foreground hover:text-accent transition-colors group"
           >
-            Richard Walander
+            <span className="group-hover:text-accent transition-colors">Richard Walander</span>
           </Link>
 
           {/* Desktop Navigation */}
