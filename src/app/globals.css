@@ -47,6 +47,11 @@
 }
 
 @layer components {
+  /* Navigation link styling */
+  .nav-link {
+    @apply text-foreground/80 hover:text-foreground transition-colors duration-200;
+  }
+  
   /* Section base styling */
   .section {
     @apply py-20 md:py-32 px-6 md:px-12;
