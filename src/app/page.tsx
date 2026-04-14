@@ -80,7 +80,7 @@ export default function Home() {
               </div>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">Mobile App</Badge>
-                <CardTitle className="group-hover:text-accent transition-colors">
+                <CardTitle className="group-hover:text-white transition-colors">
                   Kraft
                 </CardTitle>
                 <CardDescription>
@@ -96,7 +96,7 @@ export default function Home() {
               </div>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">macOS App</Badge>
-                <CardTitle className="group-hover:text-accent transition-colors">
+                <CardTitle className="group-hover:text-white transition-colors">
                   Beam
                 </CardTitle>
                 <CardDescription>
@@ -117,7 +117,7 @@ export default function Home() {
               </div>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">Portfolio</Badge>
-                <CardTitle className="group-hover:text-accent transition-colors">
+                <CardTitle className="group-hover:text-white transition-colors">
                   See All Work
                 </CardTitle>
                 <CardDescription>
